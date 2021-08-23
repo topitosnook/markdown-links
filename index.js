@@ -24,6 +24,15 @@ const isThisFile = (path) => {
 }
 
 const readDirectory = (path) => {
-  
+  // Function that checks what is inside a directory
+  try {
+    return fs.readdirSync(path);
+  } catch (err) {
+    return err;
+  } 
+}
 
+const checkMdExtention = (filePath) => {
+  const pathFile = path.parse(filePath);
+  return pathFile.ext;
 }
