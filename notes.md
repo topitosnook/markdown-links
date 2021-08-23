@@ -1,16 +1,7 @@
 # Functional Requirements and notes
 
-## Questions
-- Cuando en la parte de antes de codear dice que debo elegir si ocupare ES Modules (import/export) o CommonJS Modules (require/module.exports), pero antes en archivos del proyecto dice que el index.js debe exportar una funcion (esta puede ser con el commonjs modules)
-
-## Steps to get to the objective 
-- Read route of files (ie. /asd/asd.js)
-- Get the extention of the files (ie. .md)
-- Read the inside of the file (line by line ?)
-- Differentiate what's inside the files to get the links
-  - ¿Maybe convert to html the files?
-- Generate the statistics of the files
-- Maybe paint the dead links (?)
+## Search
+- Ruta relativa o absoluta
 
 ## Before Coding (readme.mb)
 - [ ] read a file with a fix route and print the content (use fs?)
@@ -36,6 +27,10 @@
   - documentacion del API
 
 ## Some important links
+
 - Chalk for coloring the terminal - https://github.com/chalk/chalk
 - Git Commit message convention - https://dev.to/i5han3/git-commit-message-convention-that-you-can-follow-1709
 - Eslint basic config - https://medium.com/alturasoluciones/eslint-basic-configuration-18b2109d98ec
+- link extractor Library - https://www.npmjs.com/package/markdown-link-extractor
+- check path file or dierctory - https://stackoverflow.com/questions/15630770/node-js-check-if-path-is-file-or-directory
+- showdown git - https://github.com/showdownjs/showdown
