@@ -1,7 +1,4 @@
-const showMessage = () => {
-  const message = 'I love ESLint';
-  for (let i = 0; i < 5; i++) {
-    console.log(message);
-  }
-};
-showMessage();
+const fs = require('fs');
+const path = require('path');
+
+const route = '../SCL017-md-link/';
