@@ -36,3 +36,35 @@ const checkMdExtention = (filePath) => {
   const pathFile = path.parse(filePath);
   return pathFile.ext;
 }
+
+
+
+const directory = isThisDirectory(route);
+// const file = isThisFile(path);
+
+if (directory) {
+  const filesInDirectory = readDirectory(route);
+  // console.log(filesInDirectory);
+  let newPath;
+  // let mdFiles;
+  for (i = 0; i < filesInDirectory.length; i++) {
+    newPath = path.resolve(route, filesInDirectory[i]);
+    // console.log(newPath);
+    const aux = checkMdExtention(newPath);
+    if(aux === '.md'){
+      // mdFiles += newPath;
+      console.log(filesInDirectory[i]);
+      // console.log(newPath);
+      // fs.readFile(filesInDirectory[0], "utf-8", function (err, data) {
+      //   if (err) {
+      //     console.log("Error", err);
+      //   } else {
+      //     console.log(data);
+      //   }
+      // });
+    }
+    // console.log(mdFiles);
+  }
+} 
+
+
