@@ -1,25 +1,21 @@
 # Functional Requirements and notes
 
-## Search
-- Ruta relativa o absoluta
+## Stats 
+### true
+### false
 
-## Before Coding (readme.mb)
-- [ ] read a file with a fix route and print the content (use fs?)
-- [ ] get the extension of the file use (fs?)
-- [ ] content of a directory (print a list)
-- [ ] join routes (use path to joun /home/labo with ./test)
-- [ ] Recursion (because you have to find all the directories and you dont know how many it can have)
-- [ ] Create a promise, create one with new Promise(), find out about callbacks
-
-## Find
-- The finish module has to be install 
-    - https://www.youtube.com/watch?v=4zzbNac6f6Q&list=WL&index=9
-    - https://www.youtube.com/watch?v=Knw8U5XyHaM&list=WL&index=11
-- CLI: Command Line Interface 
-- API
-- Jest- test unitarios
-- exportar una funcion mdlinks desde el archivo index.js (si la exporto necesito babel, libreria)
-
+## Validate
+### true
+* href: URL encontrada.
+* text: Texto que aparecía dentro del link (<a>).
+* file: Ruta del archivo donde se encontró el link.
+* status: Código de respuesta HTTP.
+* ok: Mensaje fail en caso de fallo u ok en caso de éxito.
+### false
+* href: URL encontrada.
+* text: Texto que aparecía dentro del link (<a>).
+* file: Ruta del archivo donde se encontró el link.
+---
 ## README 
 - Plan de acción detallado, issues y milestones
   - Descripcion del modulo
