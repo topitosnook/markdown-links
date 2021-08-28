@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 const fs = require("fs");
 
 const route = "testing.md";
@@ -28,6 +29,7 @@ const getLinkAndDescription = (text) => {
   // return [ans4, ans2];
     
 };
+
 
 // With lineReader library (npm install line-reader) and showdown converter (npm install showdown)
 const showdown = require("showdown");

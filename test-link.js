@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 // Prueba sobre los links
 function subStr(string, character, position) {
   if (position == "b") return string.substring(string.indexOf(character) + 1);
