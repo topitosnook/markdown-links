@@ -7,12 +7,20 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
+    "test": "jest --coverage"
   },
   "author": "Valeria Argomedo",
   "license": "ISC",
   "dependencies": {
     "line-reader": "^0.4.0",
     "showdown": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^27.1.0",
+    "prettier": "2.3.2"
   }
 }

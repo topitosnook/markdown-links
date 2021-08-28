@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const route = "testing.md";
 
-const read = () => {
+const read = (route) => {
   try {
     return fs.readFileSync(route, "utf8");
   } catch (err) {
@@ -28,7 +28,6 @@ const getLinkAndDescription = (text) => {
   // return [ans4, ans2];
     
 };
-// console.log(read());
 
 // With lineReader library (npm install line-reader) and showdown converter (npm install showdown)
 const showdown = require("showdown");
@@ -38,9 +37,7 @@ const lines = html.split("\n");
 let links = [];
 let counter = 0;
 lines.forEach((line) => {
-  // console.log(element);
   if (line.includes("href")) {
-    // console.log(getLinkAndDescription(line));
     links[counter] = getLinkAndDescription(line);
     counter++;
   }
