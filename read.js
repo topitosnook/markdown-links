@@ -3,13 +3,14 @@ const fs = require("fs");
 
 const route = "testing.md";
 
-const read = () => {
+const read = (file) => {
   try {
-    return fs.readFileSync(route, "utf8");
+    return fs.readFileSync(file, "utf8");
   } catch (err) {
     return err;
   }
 };
+
 function subStr(string, character, position) {
   if (position == "b") return string.substring(string.indexOf(character) + 1);
   else if (position == "a")
@@ -33,7 +34,7 @@ const getLinkAndDescription = (text) => {
 // With lineReader library (npm install line-reader) and showdown converter (npm install showdown)
 const showdown = require('showdown');
 const converter = new showdown.Converter();
-const html = converter.makeHtml(read());
+const html = converter.makeHtml(read(route));
 console.log(html);
 const lines = html.split("\n");
 let links = [];
