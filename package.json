@@ -7,8 +7,6 @@
     "test": "test"
   },
   "scripts": {
-    "eslint": "eslint --ext .js src/ test/",
-    "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage"
   },
   "author": "Valeria Argomedo",
