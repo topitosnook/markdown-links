@@ -1,4 +1,3 @@
-/* eslint-disable */ 
 const fs = require("fs");
 const path = require("path");
 
@@ -31,7 +30,6 @@ const readDirectory = (route) => {
   }
 };
 
-
 const checkMdExtention = (filePath) => {
   // Functions that checks on the md extention of the files
   const pathFile = path.parse(filePath);
@@ -44,7 +42,7 @@ const checkRoute = (route) => {
   if (isThisDirectory(route)) {
     const allFiles = readDirectory(route);
     // console.log(allFiles);
-    for (i = 0; i < allFiles.length; i++) {
+    for (let i = 0; i < allFiles.length; i++) {
       const newPath = path.resolve(route, allFiles[i]);
       const checkMD = checkMdExtention(newPath);
       if (checkMD === ".md") {
@@ -56,15 +54,15 @@ const checkRoute = (route) => {
   } else if (isThisFile(route)) {
     const newPath = path.resolve(route, route);
     const checkMD = checkMdExtention(newPath);
-    if (checkMD === ".md"){
+    if (checkMD === ".md") {
       mdFiles = route;
     } else {
-      mdFiles = 'Archivo no es .md'
+      mdFiles = "Archivo no es .md";
     }
-    
+
     // console.log(newPath);
   } else {
-    mdFiles = 'La ruta no existe';
+    mdFiles = "La ruta no existe";
     // console.log('la ruta no existe')
   }
   return mdFiles;
