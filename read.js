@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const route = "testing.md";
 
-const read = (route) => {
+const read = () => {
   try {
     return fs.readFileSync(route, "utf8");
   } catch (err) {
@@ -35,14 +35,14 @@ const showdown = require('showdown');
 const converter = new showdown.Converter();
 const html = converter.makeHtml(read());
 console.log(html);
-// const lines = html.split("\n");
-// let links = [];
-// let counter = 0;
-// lines.forEach((line) => {
-//   if (line.includes("href")) {
-//     links[counter] = getLinkAndDescription(line);
-//     counter++;
-//   }
-// });
-// console.log(`From the file: ${route}`);
-// console.log(links);
+const lines = html.split("\n");
+let links = [];
+let counter = 0;
+lines.forEach((line) => {
+  if (line.includes("href")) {
+    links[counter] = getLinkAndDescription(line);
+    counter++;
+  }
+});
+console.log(`From the file: ${route}`);
+console.log(links);
