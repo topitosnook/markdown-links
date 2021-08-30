@@ -30,19 +30,19 @@ const getLinkAndDescription = (text) => {
     
 };
 
-
 // With lineReader library (npm install line-reader) and showdown converter (npm install showdown)
-const showdown = require("showdown");
+const showdown = require('showdown');
 const converter = new showdown.Converter();
 const html = converter.makeHtml(read());
-const lines = html.split("\n");
-let links = [];
-let counter = 0;
-lines.forEach((line) => {
-  if (line.includes("href")) {
-    links[counter] = getLinkAndDescription(line);
-    counter++;
-  }
-});
-console.log(`From the file: ${route}`);
-console.log(links);
+console.log(html);
+// const lines = html.split("\n");
+// let links = [];
+// let counter = 0;
+// lines.forEach((line) => {
+//   if (line.includes("href")) {
+//     links[counter] = getLinkAndDescription(line);
+//     counter++;
+//   }
+// });
+// console.log(`From the file: ${route}`);
+// console.log(links);
