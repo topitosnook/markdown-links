@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 const isThisDirectory = (route) => {
   // Function that checks if the path is a directory
@@ -45,7 +45,7 @@ const checkRoute = (route) => {
     for (let i = 0; i < allFiles.length; i++) {
       const newPath = path.resolve(route, allFiles[i]);
       const checkMD = checkMdExtention(newPath);
-      if (checkMD === ".md") {
+      if (checkMD === '.md') {
         mdFiles[counter] = allFiles[i];
         counter++;
       }
@@ -54,15 +54,15 @@ const checkRoute = (route) => {
   } else if (isThisFile(route)) {
     const newPath = path.resolve(route, route);
     const checkMD = checkMdExtention(newPath);
-    if (checkMD === ".md") {
+    if (checkMD === '.md') {
       mdFiles = route;
     } else {
-      mdFiles = "Archivo no es .md";
+      mdFiles = 'Archivo no es .md';
     }
 
     // console.log(newPath);
   } else {
-    mdFiles = "La ruta no existe";
+    mdFiles = 'La ruta no existe';
     // console.log('la ruta no existe')
   }
   return mdFiles;
