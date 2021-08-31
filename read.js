@@ -49,70 +49,53 @@ lines.forEach((line) => {
   }
 });
 
-// // validate
-// const getResponse = (links) => {
-//   for (let i = 0; i < links.length; i++) {
-//     axios
-//       .get(links[i].link)
-//       .then((response) => {
-//         // console.log(response.status);
-//         console.log(
-//           chalk.bgBlue(
-//             '------------------------------------------------------------'
-//           )
-//         );
-//         // console.log("numero:", i + 1);
-//         console.log(chalk.green('File:', links[i].file));
-//         console.log(chalk.green('url:', links[i].link));
-//         console.log(chalk.green('description:', links[i].descrition));
-//         console.log(chalk.green('status:', response.status));
-//         console.log(chalk.green('status message: OK'));
-//       })
-//       .catch((err) => {
-//         console.log(
-//           chalk.bgBlue(
-//             '-----------------------------------------------------------'
-//           )
-//         );
-//         if (err.response.status >= 400) {
-//           // console.log("numero:", i + 1);
-//           console.log(chalk.red('File:', links[i].file));
-//           console.log(chalk.red('url:', links[i].link));
-//           console.log(chalk.red('description:', links[i].descrition));
-//           console.log(chalk.red('status:', err.response.status));
-//           console.log(chalk.red('status message: Fail'));
-//         } else if (err.response.status >= 200 && err.response.status < 400) {
-//           console.log(chalk.red('File:', links[i].file));
-//           console.log(chalk.red('url:', links[i].link));
-//           console.log(chalk.red('description:', links[i].descrition));
-//           console.log(chalk.red('status:', err.response.status));
-//           console.log(chalk.red('status message: slow'));
-//         }
-//       });
-//   }
-//   console.log(
-//     chalk.bgBlue('-----------------------------------------------------------')
-//   );
-//   console.log(
-//     chalk.bgBlue('-----------------------------------------------------------')
-//   );
-// };
-
-// getResponse(links);
-
+// validate
 const getResponse = (links) => {
   for (let i = 0; i < links.length; i++) {
     axios
       .get(links[i].link)
       .then((response) => {
-        // console.log("numero:", i + 1);
+        console.log(
+          chalk.bgBlue(
+            '------------------------------------------------------------'
+          )
+        );
+        console.log(chalk.green('File:', links[i].file));
         console.log(chalk.green('url:', links[i].link));
+        console.log(chalk.green('description:', links[i].descrition));
         console.log(chalk.green('status:', response.status));
+        console.log(chalk.green('status message: OK'));
       })
       .catch((err) => {
+        console.log(
+          chalk.bgBlue(
+            '-----------------------------------------------------------'
+          )
+        );
+        console.log(chalk.red('File:', links[i].file));
         console.log(chalk.red('url:', links[i].link));
-        console.log(chalk.red('status:', err.response.status));
+        console.log(chalk.red('description:', links[i].descrition));
+        console.log(chalk.red('status:', err));
+        console.log(chalk.red('status message: Fail'));
       });
   }
 };
+
 getResponse(links);
+
+// const getResponse = (links) => {
+//   for (let i = 0; i < links.length; i++) {
+//     axios
+//       .get(links[i].link)
+//       .then((response) => {
+//         // console.log("numero:", i + 1);
+//         console.log(chalk.green('url:', links[i].link));
+//         console.log(chalk.green('status:', response.status));
+//       })
+//       .catch((err) => {
+//         console.log(chalk.red('url:', links[i].link));
+//         console.log(chalk.red('status:', err));
+//       });
+//   }
+// };
+// getResponse(links);
