@@ -11,6 +11,7 @@ const isThisDirectory = (route) => {
   }
 };
 
+
 const isThisFile = (route) => {
   // Function that checks that the path is a file
   try {
@@ -26,7 +27,7 @@ const readDirectory = (route) => {
   try {
     return fs.readdirSync(route);
   } catch (err) {
-    return err;
+    return err.code;
   }
 };
 
@@ -41,7 +42,7 @@ const checkRoute = (route) => {
   let counter = 0;
   if (isThisDirectory(route)) {
     const allFiles = readDirectory(route);
-    // console.log(allFiles);
+    console.log(allFiles);
     for (let i = 0; i < allFiles.length; i++) {
       const newPath = path.resolve(route, allFiles[i]);
       const checkMD = checkMdExtention(newPath);
@@ -68,4 +69,9 @@ const checkRoute = (route) => {
   return mdFiles;
 };
 
-module.exports = checkRoute;
+
+exports.isThisDirectory = isThisDirectory;
+exports.isThisFile = isThisFile;
+exports.readDirectory = readDirectory;
+exports.checkMdExtention = checkMdExtention;
+exports.checkRoute = checkRoute;
