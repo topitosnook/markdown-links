@@ -75,6 +75,8 @@ const getValidation = (links) => {
   }
 };
 
+
+
 const mdLinks = (route, validate) => {
   // Checking that the directory has .md files or is an .md file
   route = checkRoute(route);
