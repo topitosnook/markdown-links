@@ -13,6 +13,7 @@ const ansReadDirectory = [
   '.eslintrc',
   '.git',
   '.gitignore',
+  'cli.js',
   'coverage',
   'forTests.md',
   'index.js',
@@ -29,7 +30,7 @@ const ansReadDirectory = [
   'testing.md',
 ];
 const ansReadDirectoryError = 'ENOENT';
-
+// --------------------------------------------------------------
 test('¿is this a directory?', () => {
   expect(isThisDirectory(route0)).toBe(true);
 });
@@ -57,6 +58,7 @@ test('checkRoute function properly reads file not md', () => {
 test('checkRoute function properly reads route directory', () => {
   expect(checkRoute(route0)).toEqual(ansRoute0);
 });
+
 test('checkRoute function properly reads route file', () => {
   expect(checkRoute('testing.md')).toEqual(route2);
 });
