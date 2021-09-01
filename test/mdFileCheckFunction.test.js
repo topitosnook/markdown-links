@@ -5,26 +5,27 @@ const {readDirectory} = require('../mdFileCheckFunction');
 
 const route0 = '../markdown-links/';
 const route1 = '../markdown-linkss/';
-const route2 = 'testing.md';
-const route3 = 'read.js';
-const ansRoute0 = [ 'notes.md', 'README.md', 'README_Project.md', 'testing.md' ];
+const route2 = ['testing.md'];
+const route3 = 'readLinks.js';
+const ansRoute0 = [ 'forTests.md', 'README.md', 'README_Project.md', 'testing.md' ];
 const ansReadDirectory = [
   '.editorconfig',
   '.eslintrc',
   '.git',
   '.gitignore',
   'coverage',
+  'forTests.md',
   'index.js',
   'mdFileCheckFunction.js',
+  'mdLinks.js',
   'node_modules',
-  'notes.md',
   'package-lock.json',
   'package.json',
-  'read.js',
+  'readFromConsole.js',
+  'readLinks.js',
   'README.md',
   'README_Project.md',
   'test',
-  'test-link.js',
   'testing.md',
 ];
 const ansReadDirectoryError = 'ENOENT';
@@ -34,7 +35,7 @@ test('¿is this a directory?', () => {
 });
 
 test('¿is this a file?', () => {
-  expect(isThisFile(route2)).toBe(true);
+  expect(isThisFile('testing.md')).toBe(true);
 });
 
 test('readDirectory function reading a directory', () => {
@@ -56,7 +57,7 @@ test('checkRoute function properly reads file not md', () => {
 test('checkRoute function properly reads route directory', () => {
   expect(checkRoute(route0)).toEqual(ansRoute0);
 });
-test('checkRoute function properly reads route directory', () => {
-  expect(checkRoute(route2)).toEqual(route2);
+test('checkRoute function properly reads route file', () => {
+  expect(checkRoute('testing.md')).toEqual(route2);
 });
 
