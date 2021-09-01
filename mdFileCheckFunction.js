@@ -42,7 +42,7 @@ const checkRoute = (route) => {
   let counter = 0;
   if (isThisDirectory(route)) {
     const allFiles = readDirectory(route);
-    console.log(allFiles);
+    // console.log(allFiles);
     for (let i = 0; i < allFiles.length; i++) {
       const newPath = path.resolve(route, allFiles[i]);
       const checkMD = checkMdExtention(newPath);
@@ -56,7 +56,7 @@ const checkRoute = (route) => {
     const newPath = path.resolve(route, route);
     const checkMD = checkMdExtention(newPath);
     if (checkMD === '.md') {
-      mdFiles = route;
+      mdFiles[0] = route;
     } else {
       mdFiles = 'Archivo no es .md';
     }
