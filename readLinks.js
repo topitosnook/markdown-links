@@ -6,15 +6,18 @@ const readFile = (file) => {
   try {
     return fs.readFileSync(file, 'utf8');
   } catch (err) {
-    return err;
+    return err.code;
   }
 };
 
 const subString = (string, character, position) => {
-  if (position == 'b') return string.substring(string.indexOf(character) + 1);
-  else if (position == 'a')
+  if (position == 'b') {
+    return string.substring(string.indexOf(character) + 1);
+  } else if (position == 'a') {
     return string.substring(0, string.indexOf(character));
-  else return string;
+  } else {
+    return string;
+  }
 };
 
 const getLinkAndDescription = (text, file) => {
@@ -78,4 +81,3 @@ exports.readFile = readFile;
 exports.subString = subString;
 exports.getLinkAndDescription = getLinkAndDescription;
 exports.getValidation = getValidation;
-

@@ -17,8 +17,8 @@ const mdLinks = (route, validate) => {
     lines.forEach((line) => {
       if (line.includes('href')) {
         links[counter] = getLinkAndDescription(line, route[i]);
-        console.log(line);
-        console.log(getLinkAndDescription(line, route[i]));
+        // console.log(line);
+        // console.log(getLinkAndDescription(line, route[i]));
         counter++;
       }
     });

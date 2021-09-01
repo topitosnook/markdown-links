@@ -7,11 +7,20 @@ const {
 
 const link =
   '<li>[ ] Instalar y usar módulos. (<a href="https://www.npmjs.com/">npm</a>)</li>';
+const file = 'forTests.md';
 const ansLink = {
   descrition: 'npm',
   link: 'https://www.npmjs.com/',
   file: 'forTests.md',
 };
 test('getLink', () => {
-  expect(getLinkAndDescription()).toBe(true);
+  expect(getLinkAndDescription(link, file)).toEqual(ansLink);
+});
+
+test('readFile', () => {
+  expect(readFile('forTest.md')).toEqual('ENOENT');
+});
+
+test('subString', () => {
+  expect(subString(link, '"')).toEqual(link);
 });
