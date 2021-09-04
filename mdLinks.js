@@ -1,5 +1,9 @@
 const { checkRoute } = require('./mdFileCheckFunction');
-const { getLinkAndDescription, readFile, getValidation } = require('./readLinks');
+const {
+  getLinkAndDescription,
+  readFile,
+  getValidation,
+} = require('./readLinks');
 const chalk = require('chalk');
 
 const mdLinks = (route, validate) => {
@@ -23,7 +27,51 @@ const mdLinks = (route, validate) => {
       }
     });
     if (validate) {
-      getValidation(links);
+      for (let i = 0; i < links.length; i++) {
+        getValidation(links[i])
+          .then((response) => {
+            console.log(
+              `${chalk.white('File: ')} ${chalk.green(links[i].file)}`
+            );
+            console.log(
+              `${chalk.white('url: ')} ${chalk.green(links[i].link)}`
+            );
+            console.log(
+              `${chalk.white('description: ')} ${chalk.green(
+                links[i].descrition
+              )}`
+            );
+            console.log(
+              `${chalk.white('status: ')} ${chalk.green(response.status)}`
+            );
+            console.log(
+              `${chalk.white('status message: ')} ${chalk.green('OK')}`
+            );
+            console.log(
+              chalk.bgBlue(
+                '------------------------------------------------------------'
+              )
+            );
+          })
+          .catch((err) => {
+            console.log(`${chalk.white('File: ')} ${chalk.red(links[i].file)}`);
+            console.log(`${chalk.white('url: ')} ${chalk.red(links[i].link)}`);
+            console.log(
+              `${chalk.white('description: ')} ${chalk.red(
+                links[i].descrition
+              )}`
+            );
+            console.log(`${chalk.white('status: ')} ${chalk.red(err)}`);
+            console.log(
+              `${chalk.white('status message: ')} ${chalk.red('Fail')}`
+            );
+            console.log(
+              chalk.bgBlue(
+                '-----------------------------------------------------------'
+              )
+            );
+          });
+      }
     } else {
       console.log(
         chalk.bgBlue(

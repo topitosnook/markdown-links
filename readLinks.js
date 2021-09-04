@@ -1,4 +1,3 @@
-const chalk = require('chalk');
 const { default: axios } = require('axios');
 const fs = require('fs');
 
@@ -37,44 +36,15 @@ const getLinkAndDescription = (text, file) => {
 };
 
 // validate
-const getValidation = (links) => {
-  console.log(
-    chalk.bgBlue('------------------------------------------------------------')
-  );
-  for (let i = 0; i < links.length; i++) {
-    axios
-      .get(links[i].link)
-      .then((response) => {
-        console.log(`${chalk.white('File: ')} ${chalk.green(links[i].file)}`);
-        console.log(`${chalk.white('url: ')} ${chalk.green(links[i].link)}`);
-        console.log(
-          `${chalk.white('description: ')} ${chalk.green(links[i].descrition)}`
-        );
-        console.log(
-          `${chalk.white('status: ')} ${chalk.green(response.status)}`
-        );
-        console.log(`${chalk.white('status message: ')} ${chalk.green('OK')}`);
-        console.log(
-          chalk.bgBlue(
-            '------------------------------------------------------------'
-          )
-        );
-      })
-      .catch((err) => {
-        console.log(`${chalk.white('File: ')} ${chalk.red(links[i].file)}`);
-        console.log(`${chalk.white('url: ')} ${chalk.red(links[i].link)}`);
-        console.log(
-          `${chalk.white('description: ')} ${chalk.red(links[i].descrition)}`
-        );
-        console.log(`${chalk.white('status: ')} ${chalk.red(err)}`);
-        console.log(`${chalk.white('status message: ')} ${chalk.red('Fail')}`);
-        console.log(
-          chalk.bgBlue(
-            '-----------------------------------------------------------'
-          )
-        );
-      });
-  }
+const getValidation = (link) => {
+  return axios
+    .get(link.link)
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      throw err;
+    });
 };
 
 exports.readFile = readFile;
