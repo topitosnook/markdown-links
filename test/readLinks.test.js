@@ -24,3 +24,9 @@ test('readFile', () => {
 test('subString', () => {
   expect(subString(link, '"')).toEqual(link);
 });
+
+test('Validation good Link ', () => {
+  getValidation(ansLink.link).then((response) => {
+    expect(response.status).toBe(200);
+  });
+});

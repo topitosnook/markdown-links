@@ -1,9 +1,7 @@
 const { checkRoute } = require('./mdFileCheckFunction');
-const {
-  getLinkAndDescription,
-  readFile,
-  getValidation,
-} = require('./readLinks');
+const { getLinkAndDescription } = require('./readLinks');
+const { readFile } = require('./readLinks');
+const { getValidation } = require('./readLinks');
 const chalk = require('chalk');
 
 const mdLinks = (route, validate) => {
