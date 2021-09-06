@@ -1,6 +1,6 @@
 const { mdLinks } = require('./mdLinks');
 
 // const route = '../markdown-links/';
-const route = 'testing.md';
+const route = 'forTests.md';
 mdLinks(route, false);
 
