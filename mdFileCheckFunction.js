@@ -37,6 +37,7 @@ const checkMdExtention = (filePath) => {
 };
 
 const checkRoute = (route) => {
+  // console.log(route);
   let mdFiles = [];
   let counter = 0;
   if (isThisDirectory(route)) {

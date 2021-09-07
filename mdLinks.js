@@ -7,7 +7,7 @@ const chalk = require('chalk');
 const mdLinks = (route, validate) => {
   // Checking that the directory has .md files or is an .md file
   route = checkRoute(route);
-  // console.log(route);
+  console.log(route);
   if (route === 'Archivo no es .md' || route === 'La ruta no existe') {
     console.log(chalk.blue(route));
   } else {

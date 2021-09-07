@@ -4,7 +4,7 @@
   "description": "Library that checks the links of markdown archives",
   "main": "index.js",
   "bin": {
-    "topitosnook-md-link":"cli.js"
+    "topitosnook-md-link": "cli.js"
   },
   "directories": {
     "test": "test"
@@ -13,7 +13,10 @@
     "eslint": "eslint --ext .js .",
     "test": "eslint --ext .js . && jest --verbose --coverage"
   },
-  "keywords":["markdown","status link"],
+  "keywords": [
+    "markdown",
+    "status link"
+  ],
   "author": "Valeria Argomedo",
   "license": "ISC",
   "dependencies": {

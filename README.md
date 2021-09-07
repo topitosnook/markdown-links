@@ -3,9 +3,6 @@
 ## Descripción 
 Librería que permite leer y analizar archivos de formato markdown. En estos se verifica que haya links, además de entregar una lista de cada link encontrado. También se puede validar el status de cada link en los archivos y obtener la información por consola. 
 
-## Version 
-1.1.2
-
 ## Instalación
 
 ### **Local** 
