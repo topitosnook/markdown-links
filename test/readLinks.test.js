@@ -2,7 +2,7 @@ const {
   readFile,
   subString,
   getLinkAndDescription,
-  getValidation,
+  getValidation
 } = require('../readLinks');
 
 const link =
@@ -26,7 +26,9 @@ test('subString', () => {
 });
 
 test('Validation good Link ', () => {
-  getValidation(ansLink.link).then((response) => {
+  getValidation(ansLink).then((response) => {
     expect(response.status).toBe(200);
+  }).catch((err) => {
+    console.log(err); 
   });
 });
