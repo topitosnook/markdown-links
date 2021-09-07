@@ -10,7 +10,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --coverage"
+    "eslint": "eslint --ext .js .",
+    "test": "eslint --ext .js . && jest --coverage"
   },
   "keywords":["markdown","status link"],
   "author": "Valeria Argomedo",
