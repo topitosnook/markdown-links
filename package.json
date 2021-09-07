@@ -1,6 +1,6 @@
 {
   "name": "topitosnook-md-link",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Library that checks the links of markdown archives",
   "main": "index.js",
   "bin": {

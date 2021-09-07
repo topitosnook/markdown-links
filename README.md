@@ -4,16 +4,16 @@
 Librería que permite leer y analizar archivos de formato markdown. En estos se verifica que haya links, además de entregar una lista de cada link encontrado. También se puede validar el status de cada link en los archivos y obtener la información por consola. 
 
 ## Version 
-1.1.0
+1.1.2
 
 ## Instalación
 
-### **node.js** 
+### **Local** 
 
 ```
 npm install topitosnook-md-link
 ```
-### **node.js global** 
+### **Global** 
 
 ```
 npm install -g topitosnook-md-link
@@ -28,9 +28,9 @@ mdLinks(route, validation);
 ```
 Donde:
 
-**route**: es la ruta del archivo o directorio a revisar.
+  **route**: es la ruta del archivo o directorio a revisar.
 
-**validation**: booleano que determina si se desea validar o no los links
+  **validation**: booleano que determina si se desea validar o no los links
 
 ### **Command Line Interface (CLI)**
 
@@ -39,11 +39,11 @@ npx topitosnook-md-link <route> <option>
 ```
 Donde:
 
-**route**: sigue siendo la ruta del archivo o directorio a revisar.
+  **route**: sigue siendo la ruta del archivo o directorio a revisar.
 
-**option**: 
-- indicar `--validate` para que se validen los links
-- puede dejarse vacío 
+  **option**: 
+  - indicar `--validate` para que se validen los links
+  - vacío para que solo encuentre los links
 
 ### **Respuesta**
 * `validation` = false
