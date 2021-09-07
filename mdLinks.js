@@ -85,9 +85,7 @@ const mdLinks = (route, validate) => {
         for (let i = 0; i < links.length; i++) {
           console.log(`${chalk.white('File: ')} ${chalk.blue(links[i].file)}`);
           console.log(`${chalk.white('url: ')} ${chalk.blue(links[i].link)}`);
-          console.log(
-            `${chalk.white('description: ')} ${chalk.blue(links[i].descrition)}`
-          );
+          console.log(`${chalk.white('description: ')} ${chalk.blue(links[i].descrition)}`);
           console.log(
             chalk.bgBlue(
               '------------------------------------------------------------'
