@@ -11,7 +11,6 @@ const isThisDirectory = (route) => {
   }
 };
 
-
 const isThisFile = (route) => {
   // Function that checks that the path is a file
   try {
@@ -68,7 +67,6 @@ const checkRoute = (route) => {
   }
   return mdFiles;
 };
-
 
 exports.isThisDirectory = isThisDirectory;
 exports.isThisFile = isThisFile;

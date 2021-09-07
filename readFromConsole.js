@@ -1,9 +1,9 @@
 const getDataFromConsole = () => {
   let validate;
   const route = process.argv[2];
-  if(process.argv.length>=4){
+  if (process.argv.length >= 4) {
     validate = true;
-  }else{
+  } else {
     validate = false;
   }
   // console.log(validate);
